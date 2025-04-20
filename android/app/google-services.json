@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "286650198866",
+    "project_id": "kertasinapp",
+    "storage_bucket": "kertasinapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286650198866:android:d3b38bc2cf591c4a90a88b",
+        "android_client_info": {
+          "package_name": "com.example.kertasinapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE7Me4KgC-MJGw5AvpDiGNhmjhwZWMPAo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
