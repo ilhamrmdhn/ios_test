@@ -1,17 +1,14 @@
-platform :ios, '13.0'
+# ios/Podfile
 
-# ignore all warnings from all pods
-inhibit_all_warnings!
+platform :ios, '12.0'
+
+ENV['FLUTTER_ROOT'] ||= File.expand_path('../flutter', __dir__)
+require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), __dir__)
 
 target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
-end
 
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    flutter_additional_ios_build_settings(target)
-  end
 end
