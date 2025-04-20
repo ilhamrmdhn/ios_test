@@ -2,11 +2,22 @@ workflows:
   ios-release-no-shorebird:
     name: iOS Release
     environment:
-      flutter: stable
+      flutter: 3.27.3
       xcode: latest
     scripts:
-      - flutter build ios --simulator
-      - mkdir -p build/ios/ipa
-      - zip -r build/ios/ipa/Runner.app.zip build/ios/iphonesimulator/Runner.app
+      - name: Clean Pods cache
+        script: |
+          cd ios
+          rm -rf Pods
+          rm -f Podfile.lock
+          pod install
+          cd ..
+      - name: Build iOS
+        script: |
+          flutter build ios --simulator
+      - name: Create IPA
+        script: |
+          mkdir -p build/ios/ipa
+          zip -r build/ios/ipa/Runner.app.zip build/ios/iphonesimulator/Runner.app
     artifacts:
       - build/ios/ipa/Runner.app.zip
